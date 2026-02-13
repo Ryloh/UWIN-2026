@@ -27,7 +27,7 @@ export function UwinLogo({ className = "" }: { className?: string }) {
             scale: 1,
             transition: {
                 duration: 0.6,
-                ease: [0.22, 1, 0.36, 1]
+                ease: [0.22, 1, 0.36, 1] as const
             }
         }
     };
@@ -60,7 +60,7 @@ export function UwinLogo({ className = "" }: { className?: string }) {
                 transition={{
                     duration: 1.8,
                     delay: 0.3,
-                    ease: [0.22, 1, 0.36, 1]
+                    ease: [0.22, 1, 0.36, 1] as const
                 }}
                 viewport={{ once: false, margin: "-50px" }}
                 className="absolute -bottom-1 left-0 right-0 h-[1px] bg-gradient-to-r from-gray-900 via-uwin-pink to-transparent"
