@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+:root {
+  /* Colors */
+  --uwin-dark: #050505;
+  /* Deep Black */
+  --uwin-pink: #f43f5e;
+  /* Neon Pink - retained for legacy/accents if needed */
+  --uwin-green: #00FF94;
+  /* UWIN Green - The new Win color */
+
+  /* Neon Accents */
+  --neon-glow: 0 0 10px rgba(244, 63, 94, 0.7), 0 0 20px rgba(244, 63, 94, 0.5);
+  --glass-bg: rgba(2, 6, 23, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+@theme {
+  --color-uwin-dark: var(--uwin-dark);
+  --color-uwin-pink: var(--uwin-pink);
+  --color-uwin-green: var(--uwin-green);
+
+  --font-inter: var(--font-inter);
+  --font-exo2: var(--font-exo2);
+  --font-orbitron: var(--font-orbitron);
+
+  --animate-swoosh: swoosh 1s ease-in-out infinite;
+
+  @keyframes swoosh {
+    0% {
+      transform: translateX(-100%) skewX(-20deg);
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 0.5;
+    }
+
+    100% {
+      transform: translateX(200%) skewX(-20deg);
+      opacity: 0;
+    }
+  }
+}
+
+body {
+  background: var(--uwin-dark);
+  color: #fff;
+  font-family: var(--font-inter);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-exo2);
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.text-neon {
+  text-shadow: 0 0 5px rgba(244, 63, 94, 0.5);
+}
+
+.border-neon {
+  box-shadow: var(--neon-glow);
+  border-color: var(--uwin-pink);
+}
+
+/* Hide scrollbar but keep scroll functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
