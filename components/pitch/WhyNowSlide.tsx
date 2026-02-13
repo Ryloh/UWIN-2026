@@ -11,7 +11,7 @@ export function WhyNowSlide() {
             <div className="w-full h-full relative flex flex-col lg:flex-row overflow-hidden bg-white">
 
                 {/* --- LEFT COL: IMAGE & CONCEPT (45%) --- */}
-                <div className="w-full lg:w-[45%] h-1/2 lg:h-full relative font-['Exo_2']">
+                <div className="w-full lg:w-[45%] h-[40vh] lg:h-full relative font-['Exo_2']">
                     {/* Background Image - Empty Shop / Closed Shutter */}
                     <div className="absolute inset-0 bg-[url('/assets/pitch/Slide4.png')] bg-cover bg-center">
                         <div className="absolute inset-0 bg-red-950/50 mix-blend-multiply" />
@@ -39,7 +39,7 @@ export function WhyNowSlide() {
                 </div>
 
                 {/* --- RIGHT COL: EDITORIAL CONTENT (55%) --- */}
-                <div className="w-full lg:w-[55%] h-full flex flex-col justify-center p-8 md:p-12 bg-white relative">
+                <div className="w-full lg:w-[55%] h-auto min-h-[60vh] lg:h-full flex flex-col justify-center p-8 md:p-12 bg-white relative">
 
                     {/* Header */}
                     <div className="mb-8 lg:mb-10">

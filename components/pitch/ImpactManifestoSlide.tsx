@@ -8,19 +8,19 @@ import { Heart, BookOpen, Users, Briefcase, Trophy, Target } from "lucide-react"
 export function ImpactManifestoSlide() {
     return (
         <SlideLayout number="09" section="IMPACT">
-            <div className="w-full h-full relative flex flex-col lg:flex-row overflow-hidden bg-white">
+            <div className="w-full h-auto min-h-full relative flex flex-col lg:flex-row overflow-visible bg-white">
 
                 {/* --- BACKGROUND LAYER --- */}
                 <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1526666923127-b2970f64b422?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center filter grayscale opacity-10 pointer-events-none" />
 
                 {/* --- LEFT COL: MANIFESTO STATEMENT (35%) --- */}
-                <div className="w-full lg:w-[35%] h-full flex flex-col justify-center p-8 md:p-12 relative border-r border-gray-100 bg-white/80 backdrop-blur-sm">
+                <div className="w-full lg:w-[35%] h-auto min-h-[40vh] lg:h-full flex flex-col justify-center p-8 md:p-12 relative border-r border-gray-100 bg-white/80 backdrop-blur-sm">
 
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                     >
-                        <h2 className="font-[family-name:var(--font-orbitron)] text-5xl lg:text-6xl font-black text-gray-900 leading-[0.9] mb-6 tracking-tighter">
+                        <h2 className="font-[family-name:var(--font-orbitron)] text-4xl lg:text-6xl font-black text-gray-900 leading-[0.9] mb-6 tracking-tighter">
                             IMPACT <br /><span className="text-uwin-pink">RÉEL</span>
                         </h2>
                         <div className="w-20 h-2 bg-gray-900 mb-8" />
@@ -55,16 +55,16 @@ export function ImpactManifestoSlide() {
                 </div>
 
                 {/* --- RIGHT COL: 4 PILLARS (65%) --- */}
-                <div className="w-full lg:w-[65%] h-full flex flex-col justify-center p-8 md:p-16 bg-white/50 backdrop-blur-sm">
+                <div className="w-full lg:w-[65%] h-auto min-h-[60vh] lg:h-full flex flex-col justify-center p-8 md:p-16 bg-white/50 backdrop-blur-sm">
 
-                    <div className="space-y-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
                         {/* Pillar 1: Education */}
                         <motion.div
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.1 }}
-                            className="flex gap-6 items-start border-b border-gray-200 pb-6"
+                            className="flex gap-6 items-start border-b border-transparent pb-6"
                         >
                             <div className="text-gray-300 font-black text-4xl leading-none">01</div>
                             <div className="flex-1">
@@ -86,7 +86,7 @@ export function ImpactManifestoSlide() {
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.2 }}
-                            className="flex gap-6 items-start border-b border-gray-200 pb-6"
+                            className="flex gap-6 items-start border-b border-transparent pb-6"
                         >
                             <div className="text-gray-300 font-black text-4xl leading-none">02</div>
                             <div className="flex-1">
@@ -108,7 +108,7 @@ export function ImpactManifestoSlide() {
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.3 }}
-                            className="flex gap-6 items-start border-b border-gray-200 pb-6"
+                            className="flex gap-6 items-start border-b border-transparent pb-6"
                         >
                             <div className="text-gray-300 font-black text-4xl leading-none">03</div>
                             <div className="flex-1">
@@ -151,6 +151,6 @@ export function ImpactManifestoSlide() {
                 </div>
 
             </div>
-        </SlideLayout>
+        </SlideLayout >
     );
 }

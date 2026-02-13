@@ -8,10 +8,10 @@ import { Gamepad2, Trophy, MapPin, Building2, AlertTriangle, Users } from "lucid
 export function ProblemSolution() {
     return (
         <SlideLayout number="03" section="CONSTAT">
-            <div className="w-full h-full relative flex flex-col lg:flex-row overflow-hidden bg-white">
+            <div className="w-full h-full relative flex flex-col lg:flex-row overflow-y-auto lg:overflow-hidden bg-white">
 
                 {/* --- LEFT COL: THE PARADOX (Visual) --- */}
-                <div className="w-full lg:w-[45%] h-full bg-gray-50 flex flex-col justify-center p-8 md:p-12 relative border-r border-gray-100">
+                <div className="w-full lg:w-[45%] h-auto min-h-[50vh] lg:h-full bg-gray-50 flex flex-col justify-center p-8 md:p-12 relative border-r border-gray-100">
 
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -86,7 +86,7 @@ export function ProblemSolution() {
                             </div>
 
                             {/* Bar & Data */}
-                            <div className="h-4 w-full bg-gray-200 rounded-full overflow-hidden mb-2 relative">
+                            <div className="h-4 w-full bg-gray-200 rounded-full overflow-hidden mb-4 relative">
                                 <motion.div
                                     initial={{ width: 0 }}
                                     whileInView={{ width: "3%" }}
@@ -104,7 +104,7 @@ export function ProblemSolution() {
                 </div>
 
                 {/* --- RIGHT COL: NARRATIVE (55%) --- */}
-                <div className="w-full lg:w-[55%] h-full bg-white flex flex-col justify-center p-8 md:p-12">
+                <div className="w-full lg:w-[55%] h-auto min-h-[50vh] lg:h-full bg-white flex flex-col justify-center p-8 md:p-12">
 
                     <div className="max-w-xl space-y-8">
 

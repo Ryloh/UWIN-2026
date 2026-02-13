@@ -8,7 +8,7 @@ import { Users, Gamepad2, Database, Search, Award, TrendingUp, Shield, Star } fr
 export function PlatformSlide() {
     return (
         <SlideLayout number="09" section="PLATEFORME">
-            <div className="w-full h-full relative flex flex-col lg:flex-row py-[clamp(32px,4vh,80px)] px-6 md:px-10 gap-8 overflow-hidden">
+            <div className="w-full h-full relative flex flex-col lg:flex-row py-8 px-4 lg:py-[clamp(32px,4vh,80px)] lg:px-10 gap-8 overflow-y-auto lg:overflow-hidden">
 
                 {/* LEFT: Dashboard Visual (App Screen) */}
                 <motion.div
@@ -114,7 +114,7 @@ export function PlatformSlide() {
                             initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4 }}
-                            className="font-[family-name:var(--font-exo2)] text-3xl md:text-5xl font-black text-gray-900 leading-tight mb-2"
+                            className="font-[family-name:var(--font-exo2)] text-3xl lg:text-5xl font-black text-gray-900 leading-tight mb-2"
                         >
                             L'OUTIL <span className="text-uwin-pink">OPÉRATIONNEL</span>
                         </motion.h2>

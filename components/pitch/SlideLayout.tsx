@@ -12,13 +12,13 @@ interface SlideLayoutProps {
 
 export function SlideLayout({ number, section, children, className = "bg-white" }: SlideLayoutProps) {
     return (
-        <section className={`h-screen w-screen relative overflow-hidden flex items-center justify-center ${className}`}>
+        <section className={`h-full w-full relative overflow-y-auto lg:overflow-hidden ${className}`}>
             {/* Background Grid/Noise - Standardized */}
             <div className="absolute inset-0 z-0 pointer-events-none">
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000003_1px,transparent_1px),linear-gradient(to_bottom,#00000003_1px,transparent_1px)] bg-[size:40px_40px]" />
             </div>
 
-            {/* A. Navigation Rail */}
+            {/* A. Navigation Rail - Fixed sticky for mobile or just hidden */}
             <div className="absolute left-6 md:left-12 top-0 bottom-0 w-8 md:w-12 flex flex-col items-center z-20 pointer-events-none hidden md:flex">
                 <motion.div
                     initial={{ height: 0 }}
@@ -60,7 +60,7 @@ export function SlideLayout({ number, section, children, className = "bg-white" 
                 />
             </div>
 
-            {/* B. Giant Watermark */}
+            {/* B. Giant Watermark - Sticky or Fixed */}
             {number && (
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 font-[family-name:var(--font-orbitron)] text-[25vw] md:text-[30vw] font-black text-gray-900/[0.02] select-none pointer-events-none whitespace-nowrap">
                     {number}
@@ -68,7 +68,7 @@ export function SlideLayout({ number, section, children, className = "bg-white" 
             )}
 
             {/* Content Container - Padded for rail */}
-            <div className="relative z-10 w-full h-full max-w-[90%] md:max-w-[85%] ml-auto mr-auto md:ml-24 md:mr-8 flex items-center justify-center">
+            <div className="relative z-10 w-full h-auto min-h-full lg:h-full px-4 py-6 md:p-0 md:max-w-[85%] ml-auto mr-auto md:ml-24 md:mr-8 flex flex-col justify-start lg:justify-center">
                 {children}
             </div>
         </section>

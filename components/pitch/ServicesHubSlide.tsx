@@ -11,7 +11,7 @@ export function ServicesHubSlide() {
             <div className="w-full h-full relative flex flex-col lg:flex-row overflow-hidden bg-white">
 
                 {/* --- LEFT COL: IMAGE & CONCEPT (45%) --- */}
-                <div className="w-full lg:w-[45%] h-1/2 lg:h-full relative font-['Exo_2']">
+                <div className="w-full lg:w-[45%] h-[40vh] lg:h-full relative font-['Exo_2']">
                     {/* Background Image - Modern Coworking / Bright */}
                     <div className="absolute inset-0 bg-[url('/assets/pitch/Slide7.png')] bg-cover bg-center">
                         <div className="absolute inset-0 bg-indigo-900/35 mix-blend-multiply" />
@@ -21,7 +21,7 @@ export function ServicesHubSlide() {
                     <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
                     {/* BEHIND TITLE: GIANT "CREATE" */}
-                    <div className="absolute top-1/2 -translate-y-1/2 -right-16 rotate-90 font-[family-name:var(--font-orbitron)] font-black text-[8rem] lg:text-[12rem] text-white/10 uppercase tracking-widest select-none pointer-events-none z-10 hidden xl:block">
+                    <div className="absolute top-1/2 -translate-y-1/2 -right-16 rotate-90 font-[family-name:var(--font-orbitron)] font-black text-[8rem] lg:text-[12rem] text-white/10 uppercase tracking-widest select-none pointer-events-none z-10 hidden lg:block">
                         CREATE
                     </div>
 
@@ -33,13 +33,13 @@ export function ServicesHubSlide() {
                             </span>
                             <div className="h-[1px] w-12 bg-white/50" />
                         </div>
-                        <h2 className="text-5xl lg:text-6xl font-[family-name:var(--font-orbitron)] font-black text-white uppercase tracking-tighter leading-none drop-shadow-xl">
+                        <h2 className="text-4xl lg:text-6xl font-[family-name:var(--font-orbitron)] font-black text-white uppercase tracking-tighter leading-none drop-shadow-xl">
                             SERVICES
                         </h2>
                     </div>
 
                     {/* JUMBO VERTICAL LABEL */}
-                    <div className="absolute top-1/2 -translate-y-1/2 -right-12 rotate-180 [writing-mode:vertical-lr] font-[family-name:var(--font-orbitron)] font-black text-[6rem] lg:text-[8rem] text-white/10 uppercase tracking-widest select-none pointer-events-none z-10 hidden xl:block">
+                    <div className="absolute top-1/2 -translate-y-1/2 -right-12 rotate-180 [writing-mode:vertical-lr] font-[family-name:var(--font-orbitron)] font-black text-[6rem] lg:text-[8rem] text-white/10 uppercase tracking-widest select-none pointer-events-none z-10 hidden lg:block">
                         SERVICES
                     </div>
 
@@ -55,7 +55,7 @@ export function ServicesHubSlide() {
                 </div>
 
                 {/* --- RIGHT COL: EDITORIAL CONTENT (55%) --- */}
-                <div className="w-full lg:w-[55%] h-full flex flex-col justify-center p-8 md:p-14 bg-white relative overflow-hidden">
+                <div className="w-full lg:w-[55%] h-auto min-h-[60vh] lg:h-full flex flex-col justify-center p-8 md:p-14 bg-white relative overflow-hidden">
 
                     {/* Header */}
                     <div className="mb-8 lg:mb-10 relative z-10">

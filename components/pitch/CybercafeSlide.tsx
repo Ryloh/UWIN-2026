@@ -11,7 +11,7 @@ export function CybercafeSlide() {
             <div className="w-full h-full relative flex flex-col lg:flex-row overflow-hidden bg-white">
 
                 {/* --- LEFT COL: IMAGE & CONCEPT (45%) --- */}
-                <div className="w-full lg:w-[45%] h-1/2 lg:h-full relative font-['Exo_2']">
+                <div className="w-full lg:w-[45%] h-[40vh] lg:h-full relative font-['Exo_2']">
                     {/* Background Image - Original Project View */}
                     <div className="absolute inset-0 bg-[url('/assets/pitch/cybercafe2.png')] bg-cover bg-center">
                         <div className="absolute inset-0 bg-blue-900/20 mix-blend-multiply" />
@@ -28,13 +28,13 @@ export function CybercafeSlide() {
                             </span>
                             <div className="h-[1px] w-12 bg-white/50" />
                         </div>
-                        <h2 className="text-6xl font-[family-name:var(--font-orbitron)] font-black text-white uppercase tracking-tighter leading-none drop-shadow-xl">
+                        <h2 className="text-4xl lg:text-6xl font-[family-name:var(--font-orbitron)] font-black text-white uppercase tracking-tighter leading-none drop-shadow-xl">
                             CYBER<br />CAFÉ
                         </h2>
                     </div>
 
                     {/* JUMBO VERTICAL LABEL */}
-                    <div className="absolute top-1/2 -translate-y-1/2 -right-12 rotate-180 [writing-mode:vertical-lr] font-[family-name:var(--font-orbitron)] font-black text-[6rem] lg:text-[8rem] text-white/30 uppercase tracking-widest select-none pointer-events-none z-10 hidden xl:block">
+                    <div className="absolute top-1/2 -translate-y-1/2 -right-12 rotate-180 [writing-mode:vertical-lr] font-[family-name:var(--font-orbitron)] font-black text-[6rem] lg:text-[8rem] text-white/30 uppercase tracking-widest select-none pointer-events-none z-10 hidden lg:block">
                         CYBER
                     </div>
 
@@ -50,9 +50,9 @@ export function CybercafeSlide() {
                 </div>
 
                 {/* --- RIGHT COL: EDITORIAL CONTENT (55%) --- */}
-                <div className="w-full lg:w-[55%] h-full flex flex-col justify-center p-8 md:p-12 bg-white relative overflow-hidden">
+                <div className="w-full lg:w-[55%] h-auto min-h-[60vh] lg:h-full flex flex-col justify-center p-8 md:p-12 bg-white relative overflow-hidden">
                     {/* GIANT CHAPTER NUMBER */}
-                    <div className="absolute -top-10 -right-10 font-[family-name:var(--font-orbitron)] font-black text-[15rem] text-gray-50 leading-none select-none pointer-events-none -z-0">
+                    <div className="absolute -top-10 -right-10 font-[family-name:var(--font-orbitron)] font-black text-[15rem] text-gray-50 leading-none select-none pointer-events-none -z-0 hidden lg:block">
                         01
                     </div>
 
