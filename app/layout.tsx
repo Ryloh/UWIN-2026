@@ -20,6 +20,10 @@ const exo2 = Exo_2({
 export const metadata: Metadata = {
   title: "UWIN ESPORT",
   description: "UWIN ESPORT - Brand New Experience 2026",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function RootLayout({
