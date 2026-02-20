@@ -44,12 +44,12 @@ export function VisionSection() {
                     </motion.p>
                 </motion.div>
 
-                {/* Scroll Indicator */}
+                {/* Scroll Indicator (Desktop) */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.5, duration: 1 }}
-                    className="absolute bottom-12 left-0 right-0 flex flex-col items-center gap-2"
+                    className="absolute bottom-12 left-0 right-0 hidden md:flex flex-col items-center gap-2"
                 >
                     <div className="w-[1px] h-8 bg-gray-300 relative overflow-hidden">
                         <motion.div
@@ -61,6 +61,25 @@ export function VisionSection() {
                     <span className="text-gray-400 text-[10px] tracking-[0.2em] font-mono uppercase">
                         Scroll / Swipe
                     </span>
+                </motion.div>
+
+                {/* Swipe Indicator (Mobile) */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.5, duration: 1 }}
+                    className="absolute bottom-12 left-1/2 -translate-x-1/2 flex md:hidden items-center gap-3 text-slate-400 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm border border-gray-100"
+                >
+                    <span className="text-[10px] tracking-[0.2em] font-bold uppercase whitespace-nowrap">Swipe</span>
+                    <motion.div
+                        animate={{ x: [0, 8, 0] }}
+                        transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                    >
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-uwin-pink">
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                        </svg>
+                    </motion.div>
                 </motion.div>
 
                 {/* Bottom - Confidential (discreet) */}

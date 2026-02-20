@@ -7,7 +7,7 @@ export default function PitchLanding() {
 
             <div className="grid gap-4 w-full max-w-md">
                 <a
-                    href="/SQY"
+                    href="/pitch/SQY"
                     className="block p-4 border border-gray-800 hover:border-uwin-pink hover:bg-gray-900 transition-colors group"
                 >
                     <div className="flex justify-between items-center">
@@ -19,13 +19,18 @@ export default function PitchLanding() {
                     </p>
                 </a>
 
-                {/* Placeholder for future decks */}
-                <div className="block p-4 border border-gray-900 opacity-50 cursor-not-allowed">
+                <a
+                    href="/pitch/KSA"
+                    className="block p-4 border border-gray-800 hover:border-blue-500 hover:bg-gray-900 transition-colors group"
+                >
                     <div className="flex justify-between items-center">
-                        <span className="text-lg font-bold text-gray-600">KSA</span>
-                        <span className="text-xs text-gray-700">Coming Soon</span>
+                        <span className="text-lg font-bold">KSA</span>
+                        <span className="text-xs text-gray-500 group-hover:text-blue-500 transition-colors">v1.0 • 2027</span>
                     </div>
-                </div>
+                    <p className="text-sm text-gray-400 mt-2">
+                        Pitch Rocket League (Saudi Arabia)
+                    </p>
+                </a>
             </div>
 
             <footer className="mt-16 text-xs text-gray-700 uppercase tracking-[0.2em]">

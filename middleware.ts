@@ -7,7 +7,7 @@ export function middleware(request: NextRequest) {
 
     // Logic specific for 'deck' subdomain
     // Works for both 'deck.uwinlab.fr' and 'deck.localhost:3000'
-    if (hostname.startsWith('deck.')) {
+    if (hostname.startsWith('deck.') && !url.pathname.startsWith('/pitch')) {
         // Rewrite path to /pitch structure
         // e.g. deck.uwinlab.fr/ -> /pitch
         // e.g. deck.uwinlab.fr/SQY -> /pitch/SQY

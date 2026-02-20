@@ -61,11 +61,7 @@ export function SlideLayout({ number, section, children, className = "bg-white" 
             </div>
 
             {/* B. Giant Watermark - Sticky or Fixed */}
-            {number && (
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 font-[family-name:var(--font-orbitron)] text-[25vw] md:text-[30vw] font-black text-gray-900/[0.02] select-none pointer-events-none whitespace-nowrap">
-                    {number}
-                </div>
-            )}
+
 
             {/* Content Container - Padded for rail */}
             <div className="relative z-10 w-full h-auto min-h-full lg:h-full px-4 py-6 md:p-0 md:max-w-[85%] ml-auto mr-auto md:ml-24 md:mr-8 flex flex-col justify-start lg:justify-center">

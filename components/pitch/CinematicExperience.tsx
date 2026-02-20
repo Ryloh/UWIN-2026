@@ -23,41 +23,95 @@ export function CinematicExperience() {
     const { scrollXProgress } = useScroll({ container: containerRef });
     const scaleX = useSpring(scrollXProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
-    // Convert vertical wheel scroll to horizontal scroll
+    // Navigation Logic: Wheel, Keyboard, and Mouse Drag
     useEffect(() => {
         const container = containerRef.current;
         if (!container) return;
 
-        const handleWheel = (e: WheelEvent) => {
-            e.preventDefault();
+        let isDown = false;
+        let startX = 0;
+        let scrollLeftPos = 0;
 
-            // Determine scroll direction and amount
-            const scrollAmount = e.deltaY !== 0 ? e.deltaY : e.deltaX;
-
-            // Get current slide index
+        const snapToSlide = (direction: 'next' | 'prev') => {
             const slideWidth = window.innerWidth;
             const currentScroll = container.scrollLeft;
             const currentSlide = Math.round(currentScroll / slideWidth);
 
-            // Determine target slide
             let targetSlide = currentSlide;
-            if (scrollAmount > 0) {
+            if (direction === 'next') {
                 targetSlide = Math.min(currentSlide + 1, TOTAL_SLIDES - 1);
-            } else if (scrollAmount < 0) {
+            } else {
                 targetSlide = Math.max(currentSlide - 1, 0);
             }
 
-            // Snap to target slide
             container.scrollTo({
                 left: targetSlide * slideWidth,
                 behavior: 'smooth'
             });
         };
 
+        const handleWheel = (e: WheelEvent) => {
+            e.preventDefault();
+            const scrollAmount = e.deltaY !== 0 ? e.deltaY : e.deltaX;
+            snapToSlide(scrollAmount > 0 ? 'next' : 'prev');
+        };
+
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                e.preventDefault();
+                snapToSlide('next');
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                snapToSlide('prev');
+            }
+        };
+
+        // Mouse Drag Logic
+        const handleMouseDown = (e: MouseEvent) => {
+            isDown = true;
+            container.style.cursor = 'grabbing';
+            container.style.scrollSnapType = 'none'; // Temporarily disable snap to allow free drag
+            startX = e.pageX - container.offsetLeft;
+            scrollLeftPos = container.scrollLeft;
+        };
+
+        const handleMouseLeave = () => {
+            if (!isDown) return;
+            isDown = false;
+            container.style.cursor = 'grab';
+            container.style.scrollSnapType = 'x mandatory'; // Re-enable snap to let browser settle it
+        };
+
+        const handleMouseUp = () => {
+            if (!isDown) return;
+            isDown = false;
+            container.style.cursor = 'grab';
+            container.style.scrollSnapType = 'x mandatory'; // Re-enable CSS snap to smoothly snap to nearest
+        };
+
+        const handleMouseMove = (e: MouseEvent) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - container.offsetLeft;
+            const walk = (x - startX) * 1.5; // Drag speed multiplier
+            container.scrollLeft = scrollLeftPos - walk;
+        };
+
+        container.style.cursor = 'grab';
         container.addEventListener('wheel', handleWheel, { passive: false });
+        window.addEventListener('keydown', handleKeyDown);
+        container.addEventListener('mousedown', handleMouseDown);
+        container.addEventListener('mouseleave', handleMouseLeave);
+        container.addEventListener('mouseup', handleMouseUp);
+        container.addEventListener('mousemove', handleMouseMove);
 
         return () => {
             container.removeEventListener('wheel', handleWheel);
+            window.removeEventListener('keydown', handleKeyDown);
+            container.removeEventListener('mousedown', handleMouseDown);
+            container.removeEventListener('mouseleave', handleMouseLeave);
+            container.removeEventListener('mouseup', handleMouseUp);
+            container.removeEventListener('mousemove', handleMouseMove);
         };
     }, []);
 
